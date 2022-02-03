@@ -188,6 +188,27 @@ body {
 	}
 }
 
+// HERO-IMG
+
+.hero-img {
+	position: relative;
+	padding: 10em 2em;
+	@include heroImages("../img/mars.png");
+	text-align: center;
+	color: $pure-white;
+	overflow: hidden;
+
+	&__title {
+		font-family: "Dancing Script", cursive;
+		margin-bottom: 0.5em;
+		font-size: 4.8rem;
+
+		&_text {
+			padding: 1em 0;
+		}
+	}
+}
+
 // MEDIA
 
 @media (min-width: 576px) {
@@ -234,10 +255,22 @@ body {
 			font-size: 1.6rem;
 		}
 	}
-	
+
 	.dreams {
 		&__text {
 			font-size: 1.8rem;
+		}
+	}
+
+	.hero-img {
+		padding: 30rem 2em;
+
+		hr {
+			margin: 0 auto;
+			width: 70%;
+		}
+		&__text {
+			font-size: 2.2rem;
 		}
 	}
 }
@@ -274,6 +307,20 @@ body {
 		}
 		&__text {
 			font-size: 2.2rem;
+		}
+	}
+
+	.hero-img {
+		padding: 40rem 2em;
+		background-image: $purple-gradient, url("../img/mars.png");
+
+		&__title {
+			font-size: 7.2rem;
+		}
+
+		hr {
+			width: 60%;
+			min-width: 900px;
 		}
 	}
 }
