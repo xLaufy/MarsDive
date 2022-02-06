@@ -142,7 +142,7 @@ body {
   position: absolute;
   right: 0;
   height: 3px;
-  content: '';
+  content: "";
   background-color: #fff;
   -webkit-transition: width 0.3s;
   transition: width 0.3s;
@@ -395,11 +395,6 @@ body {
   background-image: linear-gradient(45deg, rgba(213, 9, 253, 0.3), rgba(115, 8, 255, 0.3)), url("../img/nasa-E7q00J_8N7A-unsplash.jpg");
 }
 
-.attractions__card-img-title {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.8rem;
-}
-
 .attractions__card-img-info {
   position: absolute;
   bottom: 30px;
@@ -443,47 +438,6 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 0.8em;
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.8rem;
-}
-
-.attractions__card-info-list {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  margin: 0 auto;
-  width: 70%;
-  list-style: none;
-}
-
-.attractions__card-info-list-item {
-  padding: 1em;
-  font-size: 1.4rem;
-  border-bottom: 1px solid #eee;
-}
-
-.attractions__card-info-list-item:last-child {
-  border-bottom: none;
-}
-
-.attractions__card-info-btn {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  bottom: 2em;
-  padding: 1em;
-  border-radius: 8px;
-  width: 50%;
-  border: none;
-  background-color: #6a0fc0;
-  cursor: pointer;
-}
-
-.attractions__card-info-btn::before {
-  background-color: #0fe29c;
 }
 
 @media (min-width: 576px) {

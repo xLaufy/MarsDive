@@ -1,6 +1,6 @@
-@import "./colors";
-@import "./components";
-@import "./mixins";
+@import './colors';
+@import './components';
+@import './mixins';
 
 *,
 *::before,
@@ -16,7 +16,7 @@ html {
 }
 
 body {
-	font-family: "Open Sans", sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .burger-btn {
@@ -101,7 +101,7 @@ body {
 			transform: scaleY(0);
 			background-color: $pure-white;
 			transition: transform 0.3s;
-			content: "";
+			content: '';
 		}
 
 		&:hover::before {
@@ -134,11 +134,11 @@ body {
 	height: 80vh;
 	text-align: center;
 	color: $pure-white;
-	@include heroImages("../img/planet.jpg");
+	@include heroImages('../img/planet.jpg');
 	background-attachment: scroll;
 
 	&__heading {
-		font-family: "Dancing Script", cursive;
+		font-family: 'Dancing Script', cursive;
 		font-size: 4.8rem;
 		font-weight: 300;
 	}
@@ -193,13 +193,13 @@ body {
 .hero-img {
 	position: relative;
 	padding: 10em 2em;
-	@include heroImages("../img/mars.png");
+	@include heroImages('../img/mars.png');
 	text-align: center;
 	color: $pure-white;
 	overflow: hidden;
 
 	&__title {
-		font-family: "Dancing Script", cursive;
+		font-family: 'Dancing Script', cursive;
 		margin-bottom: 0.5em;
 		font-size: 4.8rem;
 
@@ -239,19 +239,17 @@ body {
 			transition: transform 1s, opacity 1s;
 
 			&--first {
-				background-image: $light-purple-gradient,
-					url("../img/phobos-gadf36ce5d_1920.jpg");
+				background-image: $light-purple-gradient, url('../img/phobos-gadf36ce5d_1920.jpg');
 			}
 			&--second {
-				background-image: $purple-gradient,
-					url("../img/nasa-whDrFMucHkc-unsplash.jpg");
+				background-image: $purple-gradient, url('../img/nasa-whDrFMucHkc-unsplash.jpg');
 			}
 			&--third {
-				background-image: $light-purple-gradient,
-					url("../img/nasa-E7q00J_8N7A-unsplash.jpg");
+				background-image: $light-purple-gradient, url('../img/nasa-E7q00J_8N7A-unsplash.jpg');
 			}
+
 			&-title {
-				font-family: "Dancing Script", cursive;
+				font-family: 'Dancing Script', cursive;
 				font-size: 2.8rem;
 			}
 			&-info {
@@ -264,129 +262,176 @@ body {
 					margin-right: 0.3em;
 				}
 			}
-
-			&-info {
-				position: absolute;
-				top: 0;bottom: 0;left: 0;right: 0;
-
-				background-image: url();
-			}
-		}
-	}
-
-	// MEDIA
-
-	@media (min-width: 576px) {
-		.dreams {
-			&__box {
-				flex-direction: row;
-				justify-content: space-between;
-
-				&-text {
-					width: 55%;
-
-					&--right {
-						text-align: right;
-					}
-				}
-				&-img {
-					width: 45%;
-					&--right {
-						order: 1;
-					}
-				}
-			}
-			&__img {
-				margin-bottom: 0;
-				max-height: 300px;
-			}
-		}
-	}
-
-	@media (min-width: 768px) {
-		.white-block {
-			height: 50px;
-			width: 45%;
 		}
 
-		.header {
-			&__heading {
-				font-size: 6.6rem;
-			}
-			&__text {
-				font-size: 2.2rem;
-			}
-			&__btn {
-				font-size: 1.6rem;
-			}
-		}
+		&-info {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			background-image: $light-red-gradient-solid;
+			border-radius: 8px;
+			opacity: 0;
+			transform: rotateY(180deg);
+			transition: transform 1s, opacity 1s;
 
-		.dreams {
-			&__text {
-				font-size: 1.8rem;
+			&-title {
+				@include attractionCardStyles;
+				top: 0.8em;
+				font-family: 'Dancing Script', cursive;
+				font-size: 2.8rem;
 			}
-		}
 
-		.hero-img {
-			padding: 30rem 2em;
-
-			hr {
+			&-list {
+				@include attractionCardStyles;
 				margin: 0 auto;
 				width: 70%;
+				list-style: none;
+
+				&-item {
+					padding: 1em;
+					font-size: 1.4rem;
+					border-bottom: 1px solid $light-white;
+
+					&:last-child {
+						border-bottom: none;
+					}
+				}
 			}
-			&__text {
-				font-size: 2.2rem;
+			&-btn {
+				@include attractionCardStyles;
+				bottom: 2em;
+				padding: 1em;
+				border-radius: 8px;
+				width: 50%;
+				border: none;
+				background-color: $main-color;
+				cursor: pointer;
+
+				&::before {
+					background-color: $green-color-hover;
+				}
 			}
 		}
 	}
+}
 
-	@media (min-width: 992px) {
-		.burger.btn {
-			top: 50px;
-			right: 50px;
-		}
-		.header {
-			background-image: $purple-gradient, url(../img/planet.jpg);
-		}
-		&__heading {
-			font-size: 10rem;
-		}
+// MEDIA
 
-		.nav {
-			&__item {
-				font-size: 4.8rem;
-			}
-		}
-		.dreams {
-			&__box {
-				margin: 5em 0;
-				&-text {
-					display: flex;
-					flex-direction: column;
-					justify-content: flex-end;
-					margin-bottom: 2.5em;
+@media (min-width: 576px) {
+	.dreams {
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+
+			&-text {
+				width: 55%;
+
+				&--right {
+					text-align: right;
 				}
 			}
-			&__title {
-				font-size: 3.6rem;
-			}
-			&__text {
-				font-size: 2.2rem;
+			&-img {
+				width: 45%;
+				&--right {
+					order: 1;
+				}
 			}
 		}
+		&__img {
+			margin-bottom: 0;
+			max-height: 300px;
+		}
+	}
+}
 
-		.hero-img {
-			padding: 40rem 2em;
-			background-image: $purple-gradient, url("../img/mars.png");
+@media (min-width: 768px) {
+	.white-block {
+		height: 50px;
+		width: 45%;
+	}
 
-			&__title {
-				font-size: 7.2rem;
+	.header {
+		&__heading {
+			font-size: 6.6rem;
+		}
+		&__text {
+			font-size: 2.2rem;
+		}
+		&__btn {
+			font-size: 1.6rem;
+		}
+	}
+
+	.dreams {
+		&__text {
+			font-size: 1.8rem;
+		}
+	}
+
+	.hero-img {
+		padding: 30rem 2em;
+
+		hr {
+			margin: 0 auto;
+			width: 70%;
+		}
+		&__text {
+			font-size: 2.2rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.burger.btn {
+		top: 50px;
+		right: 50px;
+	}
+	.header {
+		background-image: $purple-gradient, url(../img/planet.jpg);
+	}
+	&__heading {
+		font-size: 10rem;
+	}
+
+	.nav {
+		&__item {
+			font-size: 4.8rem;
+		}
+	}
+	.dreams {
+		&__box {
+			margin: 5em 0;
+			&-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				margin-bottom: 2.5em;
 			}
+		}
+		&__title {
+			font-size: 3.6rem;
+		}
+		&__text {
+			font-size: 2.2rem;
+		}
+	}
 
-			hr {
-				width: 60%;
-				min-width: 900px;
-			}
+	.hero-img {
+		padding: 40rem 2em;
+		background-image: $purple-gradient, url('../img/mars.png');
+
+		&__title {
+			font-size: 7.2rem;
+		}
+
+		hr {
+			width: 60%;
+			min-width: 900px;
 		}
 	}
 }
