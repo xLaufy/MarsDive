@@ -19,6 +19,10 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+
+
+// NAV
+
 .burger-btn {
 	position: fixed;
 	top: 20px;
@@ -123,6 +127,12 @@ body {
 	animation: navItemsAnimation 1s both;
 }
 
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+	background-color: $dark;
+
+}
 // HEADER
 .header {
 	position: relative;
@@ -627,6 +637,38 @@ body {
 			width: 45%;
 		}
 	}
+
+	.footer {
+		&__boxes {
+			display: flex;
+			justify-content: space-between;
+		}
+		&__box-desktop {
+			display: block;
+		}
+
+		&__box {
+			margin: 0 2em;
+			width: 25%;
+
+			&:first-child {
+				width: 50%;
+			}
+		}
+		&__box-title {
+			font-size: 2.4rem;
+		}
+		&__box-list {
+			list-style: none;
+		}
+		&__box-list-item {
+			margin-bottom: 1em;
+
+			a{ 
+				color: $light-white;
+				text-decoration: none;
+			}
+		}
 }
 
 @media (min-width: 992px) {
@@ -697,4 +739,5 @@ body {
 			width: 30%;
 		}
 	}
+}
 }
